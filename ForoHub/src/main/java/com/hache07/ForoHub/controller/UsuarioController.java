@@ -50,4 +50,12 @@ public class UsuarioController {
         return ResponseEntity.ok(page);
 
     }
+
+    @Transactional
+    @DeleteMapping("/{id}")
+    public ResponseEntity eliminar(@PathVariable Long id) {
+        var usuario = repository.getReferenceById(id);
+        repository.delete(usuario);
+        return ResponseEntity.noContent().build();
+    }
 }

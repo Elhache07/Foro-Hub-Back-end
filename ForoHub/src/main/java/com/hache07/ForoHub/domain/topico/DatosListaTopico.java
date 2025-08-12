@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 public record DatosListaTopico(
 
+        Long id,
         String titulo,
         String mensaje,
         LocalDateTime fecha,
@@ -21,6 +22,7 @@ public record DatosListaTopico(
 
         this(
 
+                topico.getId(),
                 topico.getTitulo(),
                 topico.getMensaje(),
                 topico.getFecha(),
